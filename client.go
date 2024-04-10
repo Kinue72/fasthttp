@@ -557,6 +557,7 @@ func (c *Client) Do(req *Request, resp *Response) error {
 		go c.mCleaner(m)
 	}
 
+	hc.Dial = c.Dial
 	return hc.Do(req, resp)
 }
 
